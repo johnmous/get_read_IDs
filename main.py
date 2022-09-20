@@ -23,7 +23,6 @@ args = parser.parse_args()
 # Open alignment file
 samfile = pysam.AlignmentFile(args.aln_file, "rb")
 chroms = samfile.references
-# chroms = ["chr1", "chr2", "chr3", "chr4"]
 samfile.close()
 
 
@@ -51,7 +50,7 @@ def fetch_ids(chrom):
             pass
     samfile.close()
     end = time.time()
-    print(f"Finished processing chromosome: {chrom}. It took {end - start} seconds to calculate.", file=sys.stdout)
+    print(f"Finished processing chromosome: {chrom}. It took {end - start} seconds to calculate.", file=sys.stderr)
     return read_ids
 
 
