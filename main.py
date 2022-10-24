@@ -30,7 +30,7 @@ samfile.close()
 with open(args.brc_list) as file:
     cell_bc = file.read().splitlines()
 cell_bc.pop(0)
-
+cell_bc = set(cell_bc)
 
 def fetch_ids(chrom):
     """
